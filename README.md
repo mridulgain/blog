@@ -1,5 +1,6 @@
 # blog
 An web app for bloging
+<<<<<<< HEAD
 #   General Instruction
 	Make changes through your own branch.
 # 	Instruction regarding db
@@ -20,3 +21,12 @@ An web app for bloging
 	3. topics(topic_id int auto_increment, topic_name(pk));
 	4. tags(post_id(fk->posts),topic_id
 			pk=(post_id,topic_id));
+=======
+# this change goes on "test" branch
+#mysql 
+database name : blog
+username = blog 
+password = blog
+put database dump file in db_bakup folder
+
+>>>>>>> database description added
