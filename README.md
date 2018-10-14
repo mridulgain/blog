@@ -1,13 +1,18 @@
 # blog
 An web app for bloging
-# this change goes on "test" branch
+#   General Instruction
+	Make changes through your own branch.
+# Instruction regarding db
+	Please follow this db config and schema so that we face lesser problem during integration.
+	Please initialise your local db with the mysql dump file(blog.sql) in "db_bak" folder.
+	If you make any changes to db please upload the modified mysql dump and mention it in this readme file. 
 # 	Database congiguration 
 	db : mysql
 	db name : blog
 	username : demo
 	password : demo
 #  Schema Definitions
-	1. users(usr_id char(8)pk, pswd varchar(20));
+	1. users(username (pk), password, first_name, last_name, email);
 	2. posts(post_id int auto_increment (pk), Subject, body, publish_date auto_generate);
 	3. topics(topic_id int auto_increment, topic_name(pk));
 	4. tags(post_id,topic_id
