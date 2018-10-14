@@ -2,9 +2,12 @@
 An web app for bloging
 #   General Instruction
 	Make changes through your own branch.
-# Instruction regarding db
+# 	Instruction regarding db
 	Please follow this db config and schema so that we face lesser problem during integration.
+		1. log into your root and create an user "demo" with password "demo";
+		2. create a data base named "blog"
 	Please initialise your local db with the mysql dump file(blog.sql) in "db_bak" folder.
+		3. mysql -u demo -p blog < blog.sql;
 	If you make any changes to db please upload the modified mysql dump and mention it in this readme file. 
 # 	Database congiguration 
 	db : mysql
