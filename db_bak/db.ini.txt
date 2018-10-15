@@ -1,0 +1,11 @@
+Queries:
+#creating users table and inserting first user-
+create table users( 
+	username varchar(8) primary key, 
+	password varchar(20), 
+	first_name varchar(20), 
+	last_name varchar(20), 
+	email varchar(20));
+
+insert into users 
+	values('admin','admin','Admin','Rohan','admin@rohan.com');
