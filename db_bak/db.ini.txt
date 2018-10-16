@@ -9,3 +9,13 @@ create table users(
 
 insert into users 
 	values('admin','admin','Admin','Rohan','admin@rohan.com');
+
+create table user_posts(
+	post_id int primary key auto_increment,
+	name varchar(30),
+	email varchar(30),
+	phone char(10),
+	post varchar(2000),
+	publish_date varchar(30));
+
+insert into user_posts (name,email,phone,post,publish_date) values("rohan", "rohan@rohan.com", "9876543211", "blslkdjksjdk", current_timestamp());

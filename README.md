@@ -15,7 +15,7 @@ An web app for bloging
 	username : demo
 	password : demo
 #  Schema Definitions
-	1. users(username (pk), password, first_name, last_name, email);
+	1. users(username (pk), password, first_name, last_name, email, phone);
 	2. user_posts(post_id int auto_increment (pk), username(fk->users), Subject, body, publish_date auto_generate);
 	3. topics(topic_id int auto_increment, topic_name(pk));
 	4. tags(post_id(fk->posts),topic_id
