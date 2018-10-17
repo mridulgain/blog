@@ -1,0 +1,11 @@
+table{
+	border-style: none;
+}
+tr{
+	padding:  10px;
+}
+td{
+	border-color: hotpink;
+	border-width: 5 0 0 0px;
+	padding : 10px;	
+}
