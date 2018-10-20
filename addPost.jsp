@@ -4,6 +4,10 @@
 		<title>
 			Post
 		</title>
+		<script type="text/javascript" src="js/nicEdit.js"></script>
+		<script type="text/javascript">
+			bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+		</script>
 	</head>
 	<body>
 		<form action="addPost_successful.jsp" method="post">
@@ -22,17 +26,12 @@
 				<td>E-mail</td>
 				<td><input type="text" name="email"></td>
 				</tr>
-						
-				<tr>
-				<td>Post</td>
-				<td><textarea rows="4" cols="50" name="post"></textarea></td>
-				</tr>
-				
-				<tr>
-				<td align="right"><input type="submit" value="submit"></td>
-				<td><input type="reset" value="reset"></td>
-				</tr>	
+	
 			</table>
+			<div>Add title<input type="text" name="heading"></div>
+			<div>Add sub-heading<input type="text" name="sub_heading"></div>
+			<div><textarea name="post" style="width: 100%; height: 100%"></textarea></div>
+			<div align="center"><input type="submit" value="submit"></div>
 		</form>
 	</body>
 </html>
