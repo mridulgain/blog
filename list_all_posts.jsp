@@ -15,8 +15,8 @@
 		if(search_on != null){
 			whereClause = "where " + search_on + " = '" + request.getParameter("value") + "' ";  
 		}
-		String finalSql = "Select post_id, heading, name from user_posts " + whereClause+ " order by publish_date desc";
-		out.println(finalSql);		
+		String finalSql = "Select post_id, heading, name from user_posts " + whereClause+ " order by publish_date, publish_time desc";
+		//out.println(finalSql);		
 		PreparedStatement p = con.prepareStatement(finalSql);
 		ResultSet rs = p.executeQuery();
 
@@ -29,8 +29,8 @@
 			//out.println(author);
 			out.println("<div class = 'post'>");
 			out.println("<li><a href='view_single_post.jsp?pid=" + pid + "'>" + heading + "</a>");
-			out.println("by <a href = 'list_all_posts.jsp?search_on=name&value=" + author + "'>" + author);
-			out.println("</a></div>");
+			out.println("by <a href = 'list_all_posts.jsp?search_on=name&value=" + author + "'>" + author + "</a>");
+			out.println("</div>");
 		}
 	}
 	catch(Exception e){
