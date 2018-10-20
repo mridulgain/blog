@@ -18,6 +18,7 @@ create table user_posts(
 	heading varchar(80),
 	sub_heading varchar(150),
 	post varchar(65000),
-	publish_date varchar(30));
+	publish_date varchar(30),
+	publish_time varchar(30));
 
 insert into user_posts (name,email,phone,post,publish_date) values("rohan", "rohan@rohan.com", "9876543211", "blslkdjksjdk", current_timestamp());
