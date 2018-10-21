@@ -2,7 +2,7 @@
 	input parameters : 'search_on' & 'value'
 	dynamically creates a where clause and adds it to the base sql "where search_on = value" >
 
-<%@ include file = "option.html" %>
+<%@ include file = "option.jsp" %>
 <%@ include file = "dbConnection.jsp" %>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/post_list.css">
@@ -31,6 +31,10 @@
 			out.println("<li><a href='view_single_post.jsp?pid=" + pid + "'>" + heading + "</a>");
 			out.println("by <a href = 'list_all_posts.jsp?search_on=name&value=" + author + "'>" + author + "</a>");
 			out.println("</div>");
+			//moderator gets aa delete button
+			if(session.getAttribute("userid") != null && session.getAttribute("userid").equals("admin@rohan.com")){
+				out.println("<div><a href='delete_single_post.jsp?pid=" + pid + "'>Delete</a></div>");			
+			}
 		}
 	}
 	catch(Exception e){

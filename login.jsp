@@ -1,9 +1,15 @@
 <!sign up page>
-<%@ include file = "option.html"%>
+<%@ include file = "option.jsp"%>
+<%
+	if(session.getAttribute("userid") != null){
+		out.println("Already logged in");
+	}
+	else{
+%>
 <html>
 	<head>
 		<title>
-			Log in
+			Administrator Log in
 		</title>
 	</head>
 	<body>
@@ -11,7 +17,7 @@
 			<table align="center">
 
 				<th colspan=2>
-				<h1>Log in</h1>
+				<h1>Admin Log in</h1>
 				</th>
 						
 				<tr>
@@ -32,3 +38,7 @@
 		</form>
 	</body>
 </html>
+<%
+}
+%>
+

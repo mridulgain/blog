@@ -1,4 +1,4 @@
-<%@ include file = "option.html" %>
+<%@ include file = "option.jsp" %>
 <html>
 	<head>
 		<title>

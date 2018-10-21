@@ -1,5 +1,5 @@
 <! takes input an id and displays the corresponding post>
-<%@ include file = "option.html" %>
+<%@ include file = "option.jsp" %>
 <%@ include file = "dbConnection.jsp" %>
 <%
 	try{
