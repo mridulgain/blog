@@ -25,7 +25,7 @@
 %>
 
 	<div class="div1">
-		<a  href="index.html">#METOOINDIA</a>
+		<a  href="index.jsp">#METOOINDIA</a>
 	</div>
 	<div class = "div2" >
 		<a class="nav-link" href = "index.jsp">Home</a> 

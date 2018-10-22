@@ -2,6 +2,11 @@
 	background-color : red;
 	opacity: 0.8;	
 }
+
+.h1block{
+	font-weight: 800;
+	
+}
 body {	
 margin: 0;
 	border-bottom: 1px solid transparent;
@@ -63,7 +68,6 @@ nav{
 
 .div1 > a:focus,.div1 > a:hover {
     color: #FF1493;
-
   }
 .div2 > a:focus,.div2 > a:hover {
     color: #FF1493;
@@ -116,7 +120,12 @@ header.masthead .site-heading h1 {
   font-size: 50px;
   margin-top: 0;
 }
-
+.subheading{
+	font-weight: bold;
+	padding-left: 20%;
+	padding-right: 20%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif	;
+}
 header.masthead .page-heading .subheading,
 header.masthead .site-heading .subheading {
   font-size: 24px;

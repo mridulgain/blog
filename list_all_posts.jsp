@@ -1,13 +1,27 @@
-<! list the links of all posts in descending order
-	input parameters : 'search_on' & 'value'
-	dynamically creates a where clause and adds it to the base sql "where search_on = value" >
+<html lang="en">
 
-<%@ include file = "option.jsp" %>
-<%@ include file = "dbConnection.jsp" %>
-<head>
-	<link rel="stylesheet" type="text/css" href="css/post_list.css">
-</head>
-<ol>
+  <head>
+	<%@ include file = "option-all-list.jsp" %>
+	<%@ include file = "dbConnection.jsp" %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    
+
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+<link rel="stylesheet" type="text/css" href="css/post-style.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/delete-button.css">
+  </head>
+
 <%
 	try{
 		String whereClause = "";
@@ -15,7 +29,7 @@
 		if(search_on != null){
 			whereClause = "where " + search_on + " = '" + request.getParameter("value") + "' ";  
 		}
-		String finalSql = "Select post_id, heading, name from user_posts " + whereClause+ " order by publish_date, publish_time desc";
+		String finalSql = "Select post_id, heading, sub_heading, name, publish_date, publish_time, post from user_posts " + whereClause+ " order by publish_date, publish_time desc";
 		//out.println(finalSql);		
 		PreparedStatement p = con.prepareStatement(finalSql);
 		ResultSet rs = p.executeQuery();
@@ -25,20 +39,45 @@
 			count++;
 			String pid = rs.getString(1);
 			String heading = rs.getString(2);
-			String author = rs.getString(3);
+			String subhead = rs.getString(3);
+		String author = rs.getString(4);
+		String publish_date = rs.getString(5);
 			//out.println(author);
-			out.println("<div class = 'post'>");
-			out.println("<li><a href='view_single_post.jsp?pid=" + pid + "'>" + heading + "</a>");
-			out.println("by <a href = 'list_all_posts.jsp?search_on=name&value=" + author + "'>" + author + "</a>");
-			out.println("</div>");
+			out.println("<div class='post-preview'>");
+			out.println("<a href='view_single_post.jsp?pid=" + pid + "'>");
+			out.println("<h2 class='post-title'>" + heading);
+			
+			out.println("</h2>");
+			out.println("<h3 class='post-subtitle'>"+ subhead);
+			
+			out.println("</h3>");
+			out.println("</a>");
+			out.println("<p class='post-meta'>Posted by");
+			out.println("<a href = 'list_all_posts.jsp?search_on=name&value=" + author + "'>" + author + "</a>");
+			out.println("on August 24, 2018</p>");
 			//moderator gets aa delete button
 			if(session.getAttribute("userid") != null && session.getAttribute("userid").equals("admin@rohan.com")){
-				out.println("<div><a href='delete_single_post.jsp?pid=" + pid + "'>Delete</a></div>");			
+				out.println("<p align = 'right' class = 'button-para'><a class=\"button\" href='delete_single_post.jsp?pid=" + pid + "'><span>Delete </span></a></p><hr>");			
 			}
+			else{
+			out.println("<hr class = 'div-ruler'>");
+		}
+			out.println("</div>");
+			
+			
+
 		}
 	}
 	catch(Exception e){
 		out.println(e);
 	}
 %>
-</ol>
+ <hr>
+
+ 
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
