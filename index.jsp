@@ -44,7 +44,7 @@
 		}
 	}
 	catch(Exception e){
-		out.println(e);
+		response.sendRedirect("error-page.html");
 	}
 %>
 

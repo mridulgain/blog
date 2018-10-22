@@ -11,13 +11,13 @@
 	<%@ include file = "option.jsp" %>
 </head>
 <body>
-<header class="masthead" style="background-image: url('img/home-bg.jpg'); ">
+<header class="masthead" style="background-image: url('img/home-bg.gif'); ">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <h1>"I dont want to unite you with laughter or anger. I just need my story heard."</h1>
+            <div class="site-heading" style="color:white;">
+              <h1 >"I dont want to unite you with laughter or anger. I just need my story heard."</h1>
               <span class="subheading">Hannah Gadsby</span>
             </div>
           </div>

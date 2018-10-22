@@ -18,6 +18,25 @@
 		<script type="text/javascript">
 			bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
 		</script>
+		<style>
+				.input-hidden {
+			  position: absolute;
+			  left: -9999px;
+			}
+
+			input[type=radio]:checked + label>img {
+			  border: 1px solid #fff;
+			  box-shadow: 0 0 3px 3px #090;
+			}
+
+			/* Stuff after this is only to make things more pretty */
+			input[type=radio] + label>img {
+			  border: 1px dashed #444;
+			  width: 150px;
+			  height: 150px;
+			  transition: 500ms all;
+			}
+		</style>
 	</head>
 	<body>
 <div class="container">
@@ -27,11 +46,15 @@
 
 	<form action="addPost_successful.jsp" method="POST">
 
-		<div class="form-group ">
-			<label for="slug">Select a theme</label><br>
-			<input type="radio" name="theme" value="images.jpg"><img class ="thumbnail" src="img/images.jpg" width=100 height=100>
-			<input type="radio" name="theme" value="images.jpg"><img class ="thumbnail" src="img/admin-login.jpg" width=100 height=100>
-		</div>
+		<input type="radio" name="emotion" id="sad" class="input-hidden" />
+		<label for="sad" style="padding: 10px;">
+		<img src="img/all-post.jpg"  />
+		</label>
+		
+		<input type="radio" name="emotion" id="happy" class="input-hidden" />  
+		<label for="happy" style="padding: 10px;">
+		  <img src="img/all-post.jpg" alt="I'm happy" />
+		</label>
 
 		<div class="form-group ">
 			<label for="slug">Name <span class="require">*</span> </label>
