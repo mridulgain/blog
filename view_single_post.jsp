@@ -4,18 +4,19 @@
   <head>
 	<%@ include file = "option.jsp" %>
 	<%@ include file = "dbConnection.jsp" %>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title></title>
-
+	
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/single-post.css" rel="stylesheet">
@@ -24,7 +25,7 @@
   </head>
 
   <body>
-
+	
     <!-- Navigation -->
 
     <!-- Page Header -->
@@ -71,19 +72,27 @@
 		response.sendRedirect("error-page.html");
 	}
 %>
-
- <h2> COMMENTS </h2>
-         
-
-        <form action = "comment_check.jsp" method = "POST">
+<div style=" padding-right: 30px; padding-left: 30px;">
+ <h3> Comments </h3>
+         <form action = "comment_check.jsp" method = "POST">
         <input type = "hidden" name = "pid"  value = '<%=request.getParameter("pid")%>'>
       
-        <div>Name<input type = "text" name = "name">  </div>
-        <div>Email<input type = "email" name = "email"></div><br>
-        <div>Comment<input type ="text "name="comment" style="width: 30%; height: 30%"></div>
-		<div align="center"><input type="submit" value="submit"></div>
-
-
+		<div class="form-group ">
+			<label for="slug">Name <span class="require">*</span> </label>
+			<input type="text" name="name" class="form-control" required="true"/>
+		</div>
+				<div class="form-group">
+		<label for="description">Comment:</label>
+		<textarea rows="15" class="form-control" name="description" ></textarea>
+		</div>
+		<div class="form-group">
+		<button type="submit" class="btn btn-primary">
+		Post
+		</button>
+		<a class="btn btn-default" href = "index.jsp"> 
+		Cancel</a>	
+		</div>
+		</form>
 		<%
    
          String a = request.getParameter("pid");
@@ -99,7 +108,7 @@
          }   
          
 		%>
-        </form>
+        
    <!-- Post Content -->
 
 
@@ -108,7 +117,7 @@
  
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
-
+	</div>
   </body>
 
 </html>
