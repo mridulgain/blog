@@ -28,6 +28,12 @@
 	<form action="addPost_successful.jsp" method="POST">
 
 		<div class="form-group ">
+			<label for="slug">Select a theme</label><br>
+			<input type="radio" name="theme" value="images.jpg"><img class ="thumbnail" src="img/images.jpg" width=100 height=100>
+			<input type="radio" name="theme" value="images.jpg"><img class ="thumbnail" src="img/admin-login.jpg" width=100 height=100>
+		</div>
+
+		<div class="form-group ">
 			<label for="slug">Name <span class="require">*</span> </label>
 			<input type="text" name="name" class="form-control" required="true"/>
 		</div>
