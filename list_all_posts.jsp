@@ -27,7 +27,7 @@
 		String whereClause = "";
 		String search_on = request.getParameter("search_on");
 		if(search_on != null){
-			whereClause = "where " + search_on + " = '" + request.getParameter("value") + "' ";  
+			whereClause = "where " + search_on + " like '" + request.getParameter("value") + "' ";  
 		}
 		String finalSql = "Select post_id, heading, sub_heading, name, publish_date, publish_time, post from user_posts " + whereClause+ " order by publish_date, publish_time desc";
 		//out.println(finalSql);		
