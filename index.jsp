@@ -38,6 +38,7 @@
 			out.println("<p class='post-meta'>Posted by");
 			out.println("<a href = 'list_all_posts.jsp?search_on=name&value=" + author + "'>" + author + "</a>");
 			out.println("on August 24, 2018</p>");
+
 			out.println("<hr class = 'div-ruler'>");
 			out.println("</div>");
 		}

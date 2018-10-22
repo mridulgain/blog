@@ -14,6 +14,10 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 		<link rel="stylesheet" type="text/css" href="css/login-css.css">
+		<script type="text/javascript" src="js/nicEdit.js"></script>
+		<script type="text/javascript">
+			bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+		</script>
 	</head>
 	<body>
 <div class="container">
@@ -22,6 +26,12 @@
 	<div class="">
 
 	<form action="addPost_successful.jsp" method="POST">
+
+		<div class="form-group ">
+			<label for="slug">Select a theme</label><br>
+			<input type="radio" name="theme" value="images.jpg"><img class ="thumbnail" src="img/images.jpg" width=100 height=100>
+			<input type="radio" name="theme" value="images.jpg"><img class ="thumbnail" src="img/admin-login.jpg" width=100 height=100>
+		</div>
 
 		<div class="form-group ">
 			<label for="slug">Name <span class="require">*</span> </label>
@@ -34,7 +44,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="email">Email address:</label>
+			<label for="email">Email address:<span class="require">*</span></label>
 			<input type="email" class="form-control" id="email" required="true">
 		</div>
 		<div class="form-group">
@@ -44,7 +54,7 @@
 
 		<div class="form-group">
 		<label for="description">Description</label>
-		<textarea rows="5" class="form-control" name="description" ></textarea>
+		<textarea rows="15" class="form-control" name="description" ></textarea>
 		</div>
 
 		<div class="form-group">
