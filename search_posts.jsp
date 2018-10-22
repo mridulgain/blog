@@ -8,7 +8,7 @@
     <div class="s006">
       <form>
         <fieldset>
-          <legend>What are you looking for?</legend>
+          <legend style= "color: black;">What are you looking for?</legend>
           <div class="inner-form">
             <div class="input-field">
               <button class="btn-search" type="button">
