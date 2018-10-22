@@ -24,3 +24,32 @@
 		out.println(e);
 	}
 %>
+
+         <h2> COMMENTS </h2>
+         
+
+        <form action = "comment_check.jsp" method = "POST">
+        <input type = "hidden" name = "pid"  value = '<%=request.getParameter("pid")%>'>
+      
+        <div>Name<input type = "text" name = "name">  </div>
+        <div>Email<input type = "email" name = "email"></div><br>
+        <div>Comment<input type ="text "name="comment" style="width: 30%; height: 30%"></div>
+		<div align="center"><input type="submit" value="submit"></div>
+
+
+		<%
+   
+         String a = request.getParameter("pid");
+        PreparedStatement p1 = con.prepareStatement("Select name,comment,publish_date, publish_time from user_comments where post_id = " + a );
+		ResultSet rs1 = p1.executeQuery();   
+		if(rs1.getRow() != 0 ) out.println("<h2> coments</h2>");
+        while(rs1.next())
+        {
+			out.println("<h3>" + rs1.getString(1) + "</h3>");// the title
+			out.println("on " + rs1.getString(3) + " at "+rs1.getString(4) + "</b>"); //the tagline
+			String comment = rs1.getString(2);
+			out.println("<p>" + comment + "</p>");//comment
+         }   
+         
+		%>
+        </form>
