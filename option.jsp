@@ -29,9 +29,10 @@
 	</div>
 	<div class = "div2" >
 		<a class="nav-link" href = "index.jsp">Home</a>
-		<a class="nav-link" href = "list_all_posts.jsp">All Posts</a>  
-		<a class="nav-link" href = "addPost.jsp">Publish your blog</a> 
-		<a class="nav-link" href="login.jsp">Admin Login</a>  
+		<a class="nav-link" href = "search_posts.jsp">Search</a>
+		<a class="nav-link" href = "list_all_posts.jsp">Posts</a>  
+		<a class="nav-link" href = "addPost.jsp">Create</a> 
+		<a class="nav-link" href="login.jsp">Login</a>  
 		<%
 			if(session.getAttribute("userid") != null){
 				out.println("<a class=\"nav-link\" href = 'logout.jsp'>Logout</a> ");	
