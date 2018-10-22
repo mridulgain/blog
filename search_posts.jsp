@@ -1,3 +1,6 @@
 <!search>
 <%@ include file = "option.jsp" %>
-feature yet to come
+<form action = "search_result.jsp" method="post">
+<input type="text" name="search_key">
+<input type="submit" value = "search">
+</form>
