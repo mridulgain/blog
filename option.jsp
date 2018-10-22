@@ -28,8 +28,7 @@
 		<a  href="index.jsp">#METOOINDIA</a>
 	</div>
 	<div class = "div2" >
-		<a class="nav-link" href = "index.jsp">Home</a> 
-		<a class="nav-link" href = "search_posts.jsp">Search posts</a> 
+		<a class="nav-link" href = "index.jsp">Home</a>
 		<a class="nav-link" href = "list_all_posts.jsp">All Posts</a>  
 		<a class="nav-link" href = "addPost.jsp">Publish your blog</a> 
 		<a class="nav-link" href="login.jsp">Admin Login</a>  
