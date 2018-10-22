@@ -16,7 +16,7 @@
 			whereClause = "where " + search_on + " like '" + request.getParameter("value") + "' ";  
 		}
 		String finalSql = "Select post_id, heading, name from user_posts " + whereClause+ " order by publish_date, publish_time desc";
-		//out.println(finalSql);		
+		out.println(finalSql);		
 		PreparedStatement p = con.prepareStatement(finalSql);
 		ResultSet rs = p.executeQuery();
 
