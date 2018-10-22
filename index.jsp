@@ -5,7 +5,7 @@
 </head>
 <%
 	try{
-		PreparedStatement p = con.prepareStatement("Select post_id, heading, name from user_posts order by publish_date, publish_time desc limit 3");
+		PreparedStatement p = con.prepareStatement("Select post_id, heading, name from user_posts order by publish_date desc, publish_time desc limit 3");
 		ResultSet rs = p.executeQuery();
 
 		while(rs.next()){
