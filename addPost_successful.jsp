@@ -1,6 +1,7 @@
 <%@ include file = "option.jsp" %>
 <%@ include file = "dbConnection.jsp" %>
 <%
+	out.println(request.getParameter("theme"));
 	try{
 		PreparedStatement p = con.prepareStatement("insert into user_posts (name,email,phone,heading,sub_heading,post,publish_date, publish_time) values(?, ?, ?, ?, ?, ?, current_date(), current_time()) ");
 		p.setString(1, request.getParameter("name"));

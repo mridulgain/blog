@@ -46,17 +46,17 @@
 
 	<form action="addPost_successful.jsp" method="POST">
 
-		<input type="radio" name="emotion" id="sad" class="input-hidden" />
-		<label for="sad" style="padding: 10px;">
-		<img src="img/all-post.jpg"  />
-		</label>
-		
-		<input type="radio" name="emotion" id="happy" class="input-hidden" />  
-		<label for="happy" style="padding: 10px;">
-		  <img src="img/all-post.jpg" alt="I'm happy" />
-		</label>
+		<div class="form-group">
+		<label for="slug">Select a theme</label><br>
+		<img src="img/images.jpg" height=60 width=80/><input type="radio" name="theme" value="images.jpg" checked> 
+		<img src="img/all-post.jpg" height=60 width=80/><input type="radio" name="theme" value="all-post.jpg">		
+		<img src="img/admin-login.jpg" height=60 width=80/><input type="radio" name="theme" value="admin-login.jpg"> 		
+		<img src="img/home-bg.jpg" height=60 width=80/><input type="radio" name="theme" value="home-bg.jpg">
+		<img src="img/Searchs_006.png" height=60 width=80/><input type="radio" name="theme" value="Searchs_006.png"> 	
+		<img src="img/writer.jpg" height=60 width=80/><input type="radio" name="theme" value="writer.jpg"> 		
+		</div>
 
-		<div class="form-group ">
+		<div class="form-group">
 			<label for="slug">Name <span class="require">*</span> </label>
 			<input type="text" name="name" class="form-control" required="true"/>
 		</div>
@@ -88,7 +88,7 @@
 		<button type="submit" class="btn btn-primary">
 		Post
 		</button>
-		<a class="btn btn-default" href = "index.jsp"> 
+		<a class="btn btn-default" href = "addPost.jsp"> 
 		Cancel</a>
 		
 		</div>

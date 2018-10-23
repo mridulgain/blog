@@ -40,8 +40,10 @@
 			String heading = rs.getString(1);
 		String subhead = rs.getString(2);
 		String author = rs.getString(3);
-		String publish_date = rs.getString(4);	
-			out.println("<header class='masthead' style='background-image: url(img/images.jpg);'>");
+		String publish_date = rs.getString(4);
+		String theme = "images.jpg"; //user defined theme rs.getString("theme");
+			
+			out.println("<header class='masthead' style='background-image: url(img/" + theme + ");'>");
 			out.println("<div class='overlay'></div>");
 			out.println("<div class='container'>");
 			out.println("<div class='row'>");

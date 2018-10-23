@@ -1,12 +1,12 @@
 <!sign up page>
-<%
-	if(session.getAttribute("userid") != null){
-		out.println("Already logged in");
-	}
-	else{
-%>
+
 <html>
 	<head>
+		<script type="text/javascript">
+			function alertName(){
+				alert("You are already an administrator");
+			} 
+		</script>
 	<%@ include file = "option-admin-login.jsp" %>
 		<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,6 +17,12 @@
 		<link rel="stylesheet" type="text/css" href="css/login-css.css">
 	</head>
 	<body>
+<%
+	if(session.getAttribute("userid") != null){
+		out.println("<script type='text/javascript'> alertName(); </script>");
+	}
+	else{
+%>
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
 			<div class="modal-body">
