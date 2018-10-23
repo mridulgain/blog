@@ -64,11 +64,16 @@
 			out.println("<div class='container'>");
 			out.println("<div class='row'>");
 			out.println("<div class='col-lg-8 col-md-10 mx-auto'>");
+<<<<<<< HEAD
 			out.println(rs.getString(6));//the post
 			out.println("</div>");
 			out.println("</div>");
 			out.println("</div>");
 			out.println("</article>");
+=======
+			out.println(rs.getString(6));
+
+>>>>>>> kd
 		}		
 	}
 	catch(Exception e){
@@ -76,8 +81,21 @@
 		response.sendRedirect("error-page.html");
 	}
 %>
-<div style=" padding-right: 30%; padding-left: 8%;">
- <h4 style=" padding-bottom: 20px;"> Comments </h4>
+		</div>
+</div>
+</div>
+</article>
+
+<hr class = 'style-one'>
+<hr class = 'style-one'>
+<article>
+<div class='container'>
+<div class='row'>
+<div class='col-lg-8 col-md-10 mx-auto'>
+
+		
+
+ <h3 style=" padding-bottom: 20px;"> Add Comment: </h3>
          <form action = "comment_check.jsp" method = "POST">
         <input type = "hidden" name = "pid"  value = '<%=request.getParameter("pid")%>'>
       
@@ -99,27 +117,29 @@
    
          String a = request.getParameter("pid");
         PreparedStatement p1 = con.prepareStatement("Select name,comment,publish_date, publish_time from user_comments where post_id = " + a );
+<<<<<<< HEAD
 		ResultSet rs1 = p1.executeQuery();   
 		out.println(rs1.getRow());//{out.println("<h2> comments</h2>");}
+=======
+		ResultSet rs1 = p1.executeQuery(); 
+
+		//
+		out.println("<h3 style= \"padding-bottom: 20px;\"> Comments</h3>");
+
+>>>>>>> kd
         while(rs1.next())
         {
-			out.println("<h3>" + rs1.getString(1) + "</h3>");// the title
-			out.println("on " + rs1.getString(3) + " at "+rs1.getString(4) + "</b>"); //the tagline
-			String comment = rs1.getString(2);
-			out.println("<p>" + comment + "</p>");//comment
+			out.println("<h4 class = 'commenter'>" + rs1.getString(1) + "</h4>");// the title
+			out.println("on <i>" + rs1.getString(3) + " at "+rs1.getString(4) + "</i>"); //the tagline
+			out.println("<p class = 'user-comment'>" + rs1.getString(2) + "</p>");
+			out.println("<hr class = 'style-four'>");//comment
          }   
-         
 		%>
         
-   <!-- Post Content -->
-
-
-    <hr>
-
- 
-    <!-- Custom scripts for this template -->
-    <script src="js/clean-blog.min.js"></script>
-	</div>
+</div>
+</div>
+</div>
+</article>
   </body>
 
 </html>
