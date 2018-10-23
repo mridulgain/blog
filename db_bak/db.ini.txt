@@ -19,6 +19,7 @@ create table user_posts(
 	sub_heading varchar(150),
 	post varchar(65000),
 	publish_date varchar(30),
-	publish_time varchar(30));
+	publish_time varchar(30)
+	theme varchar(20));
 
-insert into user_posts (name,email,phone,post,publish_date) values("rohan", "rohan@rohan.com", "9876543211", "blslkdjksjdk", current_timestamp());
+insert into user_posts (name,email,phone,post,publish_date,theme) values("rohan", "rohan@rohan.com", "9876543211", "blslkdjksjdk",current_time(), current_time(), "images.jpg");

@@ -32,7 +32,7 @@
     
 <%
 	try{
-		PreparedStatement p = con.prepareStatement("Select heading, sub_heading, name, publish_date, publish_time, post from user_posts where post_id = ?");
+		PreparedStatement p = con.prepareStatement("Select heading, sub_heading, name, publish_date, publish_time, post ,theme from user_posts where post_id = ?");
 		p.setString(1, request.getParameter("pid"));
 		ResultSet rs = p.executeQuery();
 		
@@ -42,6 +42,7 @@
 		String author = rs.getString(3);
 		String publish_date = rs.getString(4);
 		String theme = "images.jpg"; //user defined theme rs.getString("theme");
+		if(rs.getString(7)!=null)theme = rs.getString(7);
 			
 			out.println("<header class='masthead' style='background-image: url(img/" + theme + ");'>");
 			out.println("<div class='overlay'></div>");
@@ -71,6 +72,7 @@
 		}		
 	}
 	catch(Exception e){
+		//out.println(e);
 		response.sendRedirect("error-page.html");
 	}
 %>

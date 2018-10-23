@@ -16,7 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="css/login-css.css">
 		<script type="text/javascript" src="js/nicEdit.js"></script>
 		<script type="text/javascript">
-			bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+			bkLib.onDomLoaded(function() { nicEditors.allTextAreas({maxHeight : 400}) });
 		</script>
 		<style>
 				.input-hidden {
