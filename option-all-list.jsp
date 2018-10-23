@@ -13,13 +13,13 @@
 <title>Student Registration Form</title>
 </head>
 <body>
-<header class="masthead" style="background-image: url('img/all-post.jpg'); ">
+<header class="masthead" style="background-image: url('img/all-post.jpg'); max-width: 99%; max-height: 99%;">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
      
             <div class="site-heading">
-              <h1 class = "h1block">Browse Through Post..</h1>
+              <h1 class = "h1block">Inspire Yourself..</h1>
               <span class="subheading"></span>
             
           </div>

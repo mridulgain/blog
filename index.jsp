@@ -13,8 +13,12 @@
 	<link rel="stylesheet" type="text/css" href="css/post-style.css">
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 <title>Student Registration Form</title>
+<style>
+
+</style>
 </head>
 <body>
+<div>
 <%
 	try{
 		PreparedStatement p = con.prepareStatement("Select post_id, heading, name, sub_heading from user_posts order by publish_date desc, publish_time desc limit 3");
@@ -47,7 +51,6 @@
 		response.sendRedirect("error-page.html");
 	}
 %>
-
-          
+</div>        
 </body>
 </html>

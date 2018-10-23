@@ -23,7 +23,7 @@ $(document).ready(function(){
 	<%@ include file = "option.jsp" %>
 </head>
 <body>
-<header class="masthead" style="background-image: url('img/admin-login.jpg'); ">
+<header class="masthead" style="background-image: url('img/admin-login.jpg'); background-size: cover;">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
