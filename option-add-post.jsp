@@ -11,7 +11,7 @@
 	<%@ include file = "option.jsp" %>
 </head>
 <body>
-<header class="masthead" style="background-image: url('img/writer.jpg'); ">
+<header class="masthead" style="background-image: url('img/writer.jpg'); opacity: 0.6;">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -23,18 +23,5 @@
         </div>
       </div>
     </header>
-
-<script>
-$(function() {
-	    $(window).on("scroll", function() {
-		if($(window).scrollTop() > 50) {
-		    $(".header").addClass(".active");
-		} else {
-		    //remove the background property so it comes transparent again (defined in your css)
-		   $(".header").removeClass(".active");
-		}
-	    });
-	});
-</script>
 </body>
 </html>

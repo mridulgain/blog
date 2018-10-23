@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading" style="color:white;">
-              <h1 >"I dont want to unite you with laughter or anger. I just need my story heard."</h1>
+              <h1 class = "h1block">"I dont want to unite you with laughter or anger. I just need my story heard."</h1>
               <span class="subheading">Hannah Gadsby</span>
             </div>
           </div>

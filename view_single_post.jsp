@@ -72,25 +72,23 @@
 		response.sendRedirect("error-page.html");
 	}
 %>
-<div style=" padding-right: 30px; padding-left: 30px;">
- <h3> Comments </h3>
+<div style=" padding-right: 30%; padding-left: 8%;">
+ <h4 style=" padding-bottom: 20px;"> Comments </h4>
          <form action = "comment_check.jsp" method = "POST">
         <input type = "hidden" name = "pid"  value = '<%=request.getParameter("pid")%>'>
       
 		<div class="form-group ">
-			<label for="slug">Name <span class="require">*</span> </label>
+			<label for="slug" style= "font-size:17px;">Name </label>
 			<input type="text" name="name" class="form-control" required="true"/>
 		</div>
 				<div class="form-group">
-		<label for="description">Comment:</label>
-		<textarea rows="15" class="form-control" name="description" ></textarea>
+		<label for="description" style= "font-size:17px;">Comment:</label>
+		<textarea rows="10" class="form-control" name="description" ></textarea>
 		</div>
-		<div class="form-group">
+		<div class="form-group" >
 		<button type="submit" class="btn btn-primary">
 		Post
 		</button>
-		<a class="btn btn-default" href = "index.jsp"> 
-		Cancel</a>	
 		</div>
 		</form>
 		<%
