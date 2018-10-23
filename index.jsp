@@ -21,7 +21,7 @@
 <div>
 <%
 	try{
-		PreparedStatement p = con.prepareStatement("Select post_id, heading, name, sub_heading from user_posts order by publish_date desc, publish_time desc limit 3");
+		PreparedStatement p = con.prepareStatement("Select post_id, heading, name, sub_heading, publish_date from user_posts order by publish_date desc, publish_time desc limit 3");
 		ResultSet rs = p.executeQuery();
 
 		while(rs.next()){
@@ -29,6 +29,7 @@
 			String pid = rs.getString(1);
 			String heading = rs.getString(2);
 			String author = rs.getString(3);
+			String publish_date = rs.getString(5);
 			//out.println(author);
 			out.println("<div class='post-preview'>");
 			out.println("<a href='view_single_post.jsp?pid=" + pid + "'>");
@@ -41,7 +42,7 @@
 			out.println("</a>");
 			out.println("<p class='post-meta'>Posted by");
 			out.println("<a href = 'list_all_posts.jsp?search_on=name&value=" + author + "'>" + author + "</a>");
-			out.println("on August 24, 2018</p>");
+			out.println("on " + publish_date + "</p>");
 
 			out.println("<hr class = 'div-ruler'>");
 			out.println("</div>");

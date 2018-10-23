@@ -72,12 +72,12 @@
 		</div>
 		<div class="form-group">
 			<label for="title">Sub-Heading <span class="require">*</span></label>
-			<input type="text" class="form-control" name="subheading" required="true"/>
+			<input type="text" class="form-control" name="sub_heading" required="true"/>
 		</div>    		    
 
 		<div class="form-group">
 		<label for="description">Description</label>
-		<textarea rows="15" class="form-control" name="description" ></textarea>
+		<textarea rows="15" class="form-control" name="post" ></textarea>
 		</div>
 
 		<div class="form-group">

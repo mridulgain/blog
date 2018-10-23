@@ -64,7 +64,7 @@
 			out.println("<div class='container'>");
 			out.println("<div class='row'>");
 			out.println("<div class='col-lg-8 col-md-10 mx-auto'>");
-			out.println(rs.getString(6));
+			out.println(rs.getString(6));//the post
 			out.println("</div>");
 			out.println("</div>");
 			out.println("</div>");
