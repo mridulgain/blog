@@ -5,7 +5,7 @@
 	try{
 		String name = request.getParameter("name");
    		String email = request.getParameter("email");
-   		String comment = request.getParameter("comment");
+   		String comment = request.getParameter("description");
  		String pid = request.getParameter("pid");
 
 		PreparedStatement st = con.prepareStatement("insert into user_comments values(?,?,?,?,CURDATE(),CURTIME())");
@@ -19,7 +19,7 @@
 	}
 	catch(Exception e)
 	{
-  		out.println(e);
+		response.sendRedirect("error-page.html");
 	}    
 
 
