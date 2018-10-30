@@ -42,7 +42,7 @@
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
 					</div>
-					<p class="hint-text"><a href="#">Forgot Password?</a></p>
+					<p class="hint-text" onClick= "alert('username: admin \npassword: admin');"><a href="#">Forgot Password?</a></p>
 				</form>
 			</div>
 			<div class="modal-footer">For Administrator Use Only.</div>

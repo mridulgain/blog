@@ -1,10 +1,4 @@
-#footer {
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 3em;
-    margin-top: -3em;
-}
+
 nav span {
   font-weight: 600;
   letter-spacing: .085em;
@@ -23,7 +17,7 @@ nav.scroll {
 
 nav{
 	position: fixed;
-	background: transparent;
+	background: grey;
 	
 	z-index: 9999;
 	top: 0;

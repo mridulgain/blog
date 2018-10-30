@@ -13,7 +13,7 @@
 		
 		int temp = p.executeUpdate();
 		if(temp > 0){
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("list_all_posts.jsp");
 		}
 				
 	}
@@ -21,6 +21,6 @@
 		out.println("Username already taken");	
 	}
 	catch(Exception e){
-		out.println(e);
+		response.sendRedirect("error-page.html");
 	}
 %>

@@ -21,7 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="css/single-post.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/default.css">
-
+	
   </head>
 
   <body>
@@ -77,17 +77,17 @@
 	}
 %>
 <div style=" padding-right: 30%; padding-left: 8%;">
- <h4 style=" padding-bottom: 20px;"> Comments </h4>
+	<h3 style=" padding-bottom: 20px;">Join the Discussion</h3>
          <form action = "comment_check.jsp" method = "POST">
         <input type = "hidden" name = "pid"  value = '<%=request.getParameter("pid")%>'>
       
 		<div class="form-group ">
-			<label for="slug" style= "font-size:17px;">Name </label>
-			<input type="text" name="name" class="form-control" required="true"/>
+			<label for="slug" style= "font-size:17px;"> Your Name: </label>
+			<input type="text" name="name" class="form-control" required="true" value = "Name"/>
 		</div>
-				<div class="form-group">
-		<label for="description" style= "font-size:17px;">Comment:</label>
-		<textarea rows="10" class="form-control" name="description" ></textarea>
+		<div class="form-group">
+		<label for="description" style= "font-size:17px;">Your Comment:</label>
+		<textarea rows="10" class="form-control" name="description" value = "Comment"></textarea>
 		</div>
 		<div class="form-group" >
 		<button type="submit" class="btn btn-primary">
@@ -96,13 +96,14 @@
 		</div>
 		</form>
 		<%
-   
-         String a = request.getParameter("pid");
+   	try{
+   		
+        String a = request.getParameter("pid");
         PreparedStatement p1 = con.prepareStatement("Select name,comment,publish_date, publish_time from user_comments where post_id = " + a );
 		ResultSet rs1 = p1.executeQuery();   
 		rs1.last();
 		if(rs1.getRow() != 0){
-			out.println("Comments");
+			out.println("<h3 style=\" padding-bottom: 20px;\"><u>Comments </u></h3>");
 		}
 		rs1.beforeFirst();
         while(rs1.next())
@@ -111,7 +112,12 @@
 			out.println("on " + rs1.getString(3) + " at "+rs1.getString(4) + "</b>"); //the tagline
 			String comment = rs1.getString(2);
 			out.println("<p>" + comment + "</p>");//comment
-         }   
+         } 
+         
+        }
+        catch(Exception e){
+			response.sendRedirect("error-page.html");
+	}
          
 		%>
         
@@ -124,6 +130,7 @@
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
 	</div>
+	<footer></footer>
   </body>
 
 </html>

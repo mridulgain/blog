@@ -1,6 +1,6 @@
 <html>
   <head>
-  <%@ include file = "option.jsp" %>
+  <%@ include file = "option-sr.jsp" %>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
     <link href="css/search-style.css" rel="stylesheet" />
   </head>
@@ -22,5 +22,6 @@
         </fieldset>
       </form>
     </div>
+    <footer></footer>
   </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

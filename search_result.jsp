@@ -1,7 +1,7 @@
 <! search" >
 
 <head>
-	<%@ include file = "option.jsp" %>
+	<%@ include file = "option-sr.jsp" %>
 	<%@ include file = "dbConnection.jsp" %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +24,7 @@
 <%
 	try{
 
+		//by author search
 		String search_key = request.getParameter("search_key");  
 		
 		String finalSql = "Select post_id, heading, name from user_posts where name like '%" + search_key + "%' order by publish_date, publish_time desc";
@@ -33,6 +34,13 @@
 
 		int count = 0;
 		out.println("<h2 style = 'padding-top: 50px; padding-bottom: 30px; text-align: center; font-family:georgia,garamond,serif;'>BY AUTHOR  </h2>");
+		
+		int flagAuthor = 0;
+		rs.last();
+		if(rs.getRow() == 0){
+			out.println("Nothing found for <i>" + search_key + "</i> in author"); flagAuthor = 1;}
+		rs.beforeFirst();
+		
 		while(rs.next()){
 			count++;
 			String pid = rs.getString(1);
@@ -66,8 +74,20 @@
 <BR><BR>
 <HR><BR><BR>
 <%
+		//by title
 		count = 0;
 		out.println("<h2 style = 'padding-top: 10px; padding-bottom: 30px; text-align: center; font-family:georgia,garamond,serif;'>BY TITLE  </h2>");
+		
+		int flagHeading = 0;
+		rs.last();
+		if(rs.getRow() == 0){
+			out.println("Nothing found for <i>" + search_key + "</i> in heading."); flagHeading = 1;}
+		rs.beforeFirst();
+		
+		if(flagAuthor == 1 && flagHeading == 1){
+			response.sendRedirect("search-not-found.jsp");
+		}
+		
 		while(rs.next()){
 			count++;
 			String pid = rs.getString(1);
