@@ -100,7 +100,11 @@
          String a = request.getParameter("pid");
         PreparedStatement p1 = con.prepareStatement("Select name,comment,publish_date, publish_time from user_comments where post_id = " + a );
 		ResultSet rs1 = p1.executeQuery();   
-		out.println(rs1.getRow());//{out.println("<h2> comments</h2>");}
+		rs1.last();
+		if(rs1.getRow() != 0){
+			out.println("Comments");
+		}
+		rs1.beforeFirst();
         while(rs1.next())
         {
 			out.println("<h3>" + rs1.getString(1) + "</h3>");// the title
