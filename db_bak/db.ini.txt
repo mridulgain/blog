@@ -1,4 +1,11 @@
 Queries:
+#database setup
+mysql -u root -p
+create database blog;
+create user "demo"@"localhost" identified by "demo";
+grant all privileges on blog.* to demo@localhost;
+
+
 #creating users table and inserting first user-
 create table users( 
 	username varchar(8) primary key, 
