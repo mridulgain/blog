@@ -17,6 +17,4 @@ An web app for bloging
 #  Schema Definitions
 	1. users(username (pk), password, first_name, last_name, email, phone);
 	2. user_posts(post_id int <auto_increment (pk)>, name, email, phone, heading, sub_heading, post, publish_date <auto_generate>, publish_time <auto_generate>);
-	3. topics(topic_id int auto_increment, topic_name(pk));
-	4. tags(post_id(fk->posts),topic_id
-			pk=(post_id,topic_id));
+	3. user_posts(post_id int fk, name , email , comment , publish_date, publish_time);
