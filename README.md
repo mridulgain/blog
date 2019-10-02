@@ -1,4 +1,4 @@
-# blog
+# Anonymous Blog
 An web app for bloging
 #   General Instruction
 	Make changes through your own branch.
