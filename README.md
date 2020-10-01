@@ -16,7 +16,13 @@ An web app for bloging
 	password : demo
 #  Schema Definitions
 	1. users(username (pk), password, first_name, last_name, email);
-	2. user_posts(post_id int auto_increment (pk), username(fk->users), Subject, body, publish_date auto_generate);
+	2. user_posts(post_id int auto_increment (pk),
+			username(fk->users),
+			Subject, body, 
+			publish_date auto_generate
+		     );
 	3. topics(topic_id int auto_increment, topic_name(pk));
-	4. tags(post_id(fk->posts),topic_id
-			pk=(post_id,topic_id));
+	4. tags(post_id(fk->posts),
+		topic_id
+		pk=(post_id,topic_id)
+		);
