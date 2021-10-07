@@ -3,7 +3,7 @@
 <%
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blog","demo","demo");
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blog","admin","passcode");
 	}
 	catch(Exception e){
 		out.println(e);
